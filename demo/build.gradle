@@ -1,0 +1,77 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.12.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'idea'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+
+
+repositories {mavenCentral()}
+//repositories {  mavenLocal()}
+
+dependencies {
+
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc
+//compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.0.1.RELEASE'
+// https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+//compile group: 'org.springframework', name: 'spring-jdbc', version: '5.0.5.RELEASE'
+//compile('org.springframework.boot:spring-boot-starter-web')
+//testCompile('org.springframework.boot:spring-boot-starter-test')
+//runtime('javax.servlet:jstl')
+// https://mvnrepository.com/artifact/org.springframework/spring-web
+//compile group: 'org.springframework', name: 'spring-web', version: '5.0.5.RELEASE'
+
+	//compile('org.springframework.boot:spring-boot-starter-freemarker')
+	
+	
+	compile('org.springframework.boot:spring-boot-starter-jdbc')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	// https://mvnrepository.com/artifact/com.github.noraui/ojdbc7
+compile group: 'com.oracle', name: 'ojdbc7', version: '12.1.0.1'
+
+	runtime('org.springframework.boot:spring-boot-devtools')
+	// https://mvnrepository.com/artifact/com.oracle/ojdbc14
+//compile group: 'com.oracle', name: 'ojdbc7', version: '12.1.0'
+	
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	
+	
+//runtime('javax.servlet:jstl')
+	// https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper
+compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.7'
+// https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl
+//compile group: 'javax.servlet.jsp.jstl', name: 'jstl', version: '1.2'
+// https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/javax.servlet.jsp.jstl-api
+//compile group: 'javax.servlet.jsp.jstl', name: 'javax.servlet.jsp.jstl-api', version: '1.2.1'
+//runtime("javax.servlet:jstl")
+// https://mvnrepository.com/artifact/jstl/jstl
+//compile group: 'jstl', name: 'jstl', version: '1.2'
+
+
+   compile("org.springframework.security:spring-security-taglibs")
+    runtime ("org.springframework.security:spring-security-taglibs")
+    //compile 'javax.servlet:javax.servlet-api:3.1.0'
+
+
+	
+	
+}
